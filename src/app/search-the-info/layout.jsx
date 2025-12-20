@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Layout({ children }) {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <div className="mx-auto max-w-7xl lg:px-8 sm:py-10 pb-10">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Sidebar */}
         <div className="lg:col-span-1">
@@ -18,7 +18,7 @@ export default function Layout({ children }) {
         </div>
 
         {/* Main Content */}
-        <div className="lg:col-span-3">
+        <div className=" px-4 sm:px-6 lg:col-span-3">
           {children}
         </div>
       </div>
