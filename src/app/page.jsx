@@ -68,6 +68,41 @@ export default function HomePage() {
         </h2>
 
         <div className="space-y-6">
+           {/* Bitmap Lab */}
+          <article className="border-l-4 border-gray-300 pl-6 hover:border-green-600 transition-colors">
+            <div className="flex items-start justify-between mb-2">
+              <h3 className="text-lg font-bold text-gray-900">
+                <Link href="/bitmap-lab" className="hover:text-green-600">
+                  Bitmap Lab
+                </Link>
+              </h3>
+              <a 
+                href="https://github.com/utsab-adhikari/bitmap-lab" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 text-sm flex items-center gap-1"
+              >
+                Github
+                <FaExternalLinkAlt className="w-3 h-3" />
+              </a>
+            </div>
+            
+            <p className="text-gray-700 text-sm mb-3 leading-relaxed">
+              A Repository and Documentation for bitmap-lab, it contains the learning journey of 
+              bitmap, operations, and kernel near programming.
+            </p>
+            
+            <div className="text-xs text-gray-600 mb-2">
+              <span className="font-medium">Language:</span> C - Programming
+            </div>
+            
+            <Link 
+              href="/bitmap-lab" 
+              className="text-sm text-green-600 hover:text-green-800 font-medium"
+            >
+              View Documentation →
+            </Link>
+          </article>
           {/* Search The Info */}
           <article className="border-l-4 border-gray-300 pl-6 hover:border-blue-600 transition-colors">
             <div className="flex items-start justify-between mb-2">
