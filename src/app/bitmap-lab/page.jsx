@@ -14,7 +14,9 @@ export default function BitmapLabPage() {
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
               </svg>
             </li>
-            <li className="text-gray-700 font-medium">Bitmap Lab</li>
+            <li className="text-gray-700 font-medium">
+              <span className="lowercase">bitmap-lab</span>
+            </li>
           </ol>
         </nav>
         <h1 className="text-3xl font-bold text-gray-900 font-mono">
@@ -31,7 +33,7 @@ export default function BitmapLabPage() {
         {/* Terminal Overview */}
         <section>
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            overview
+            repository overview
           </h2>
           <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
             {/* Terminal Header */}
@@ -81,98 +83,122 @@ docs/
           </div>
         </section>
 
-        {/* Usage & Flow */}
+        {/* Directories */}
         <section>
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            typical workflow
+            directories
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2 text-xs sm:text-sm">
+            <article className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:shadow-sm transition-colors">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">src/</span>
+                  <Link href="/bitmap-lab/src" className="text-blue-600 hover:text-blue-800">
+                    C source files
+                  </Link>
+                </div>
+                <span className="text-xs text-gray-500">implementation</span>
+              </div>
+              <p className="text-gray-700">
+                Core C programs that work with raw pixel buffers, bit operations and
+                small framebuffer-like abstractions.
+              </p>
+            </article>
+
+            <article className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:shadow-sm transition-colors">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">include/</span>
+                  <Link href="/bitmap-lab/include" className="text-blue-600 hover:text-blue-800">
+                    headers
+                  </Link>
+                </div>
+                <span className="text-xs text-gray-500">interfaces</span>
+              </div>
+              <p className="text-gray-700">
+                Header files that define structs, function signatures and constants used
+                across the bitmap-lab experiments.
+              </p>
+            </article>
+
+            <article className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:shadow-sm transition-colors">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">test/</span>
+                  <Link href="/bitmap-lab/test" className="text-blue-600 hover:text-blue-800">
+                    tests &amp; understandings
+                  </Link>
+                </div>
+                <span className="text-xs text-gray-500">learning</span>
+              </div>
+              <p className="text-gray-700">
+                Small, focused C programs like <code>T01_UnderstandingShifting.c</code> that
+                document one concept at a time.
+              </p>
+            </article>
+
+            <article className="border border-gray-200 rounded-lg p-4 hover:border-blue-400 hover:shadow-sm transition-colors">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-700">build/</span>
+                  <Link href="/bitmap-lab/build" className="text-blue-600 hover:text-blue-800">
+                    binaries
+                  </Link>
+                </div>
+                <span className="text-xs text-gray-500">artifacts</span>
+              </div>
+              <p className="text-gray-700">
+                Compiled outputs from <code>make</code> commands. Run these from a terminal to
+                see behavior, then come back here to read the explanations.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        {/* Learning Flow */}
+        <section>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            learning flow
           </h2>
           <div className="grid gap-4 md:grid-cols-2 text-xs sm:text-sm">
             <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
-              <p className="text-gray-500 mb-1">$ make init</p>
+              <p className="text-gray-500 mb-1">1. clone &amp; build</p>
               <p className="text-gray-800">
-                ▸ compile initial C examples that allocate and clear bitmap buffers.
+                ▸ <code>git clone</code>, <code>cd bitmap-lab</code>, then <code>make</code> to build the
+                small demos.
               </p>
               <p className="text-gray-800">
-                ▸ explore how width, height, pitch and color depth map to memory.
+                ▸ run binaries from <code>build/</code> while reading the matching docs.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
-              <p className="text-gray-500 mb-1">$ cd src && vim bitmap_draw.c</p>
+              <p className="text-gray-500 mb-1">2. read tests</p>
               <p className="text-gray-800">
-                ▸ edit C code that writes directly into pixel buffers.
+                ▸ start with <Link href="/bitmap-lab/test" className="text-blue-600 hover:text-blue-800">test/</Link>
+                to understand bit shifts, masks and basic operations.
               </p>
               <p className="text-gray-800">
-                ▸ experiment with bitwise operations, channels and scanlines.
+                ▸ use each test page as a mini lab notebook entry.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
-              <p className="text-gray-500 mb-1">$ ./build/inspect_pixel 32 12</p>
+              <p className="text-gray-500 mb-1">3. modify src/</p>
               <p className="text-gray-800">
-                ▸ print out address, offset and RGBA values for a pixel.
+                ▸ once concepts are clear, jump into <code>src/</code> to change the
+                implementations.
               </p>
               <p className="text-gray-800">
-                ▸ connect the mental model between indexes and raw memory.
+                ▸ keep experiments small and commit frequently.
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
-              <p className="text-gray-500 mb-1">$ make test</p>
+              <p className="text-gray-500 mb-1">4. document as you go</p>
               <p className="text-gray-800">
-                ▸ run small tests that verify conversions and buffer operations.
+                ▸ for any new experiment, add a short page under the relevant
+                directory (usually <code>test/</code>).
               </p>
               <p className="text-gray-800">
-                ▸ keep the focus on correctness and understanding, not frameworks.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Tech Stack */}
-        <section>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            technology foundation
-          </h2>
-          <div className="bg-gray-50 border rounded-lg p-5">
-            <dl className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div>
-                <dt className="font-semibold text-gray-900 mb-1">Language</dt>
-                <dd className="text-gray-700">C (no frameworks)</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-gray-900 mb-1">Toolchain</dt>
-                <dd className="text-gray-700">gcc / clang, make, linux shell tools</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-gray-900 mb-1">Targets</dt>
-                <dd className="text-gray-700">bitmap buffers, simple framebuffers, kernel-near concepts</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-gray-900 mb-1">Platform</dt>
-                <dd className="text-gray-700">Linux terminal, editor of choice (vim, neovim, etc.)</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            explore more
-          </h2>
-          <p className="text-gray-700 text-sm mb-4">
-            Additional sections will document directory layout, build system, and deeper
-            discussions about memory, cache lines and pixel formats.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div className="border rounded-lg p-4">
-              <h3 className="font-semibold text-gray-900 mb-2">$ man bitmap-lab-structure</h3>
-              <p className="text-gray-700">
-                Directory level overview for src, include, test and build.
-              </p>
-            </div>
-            <div className="border rounded-lg p-4">
-              <h3 className="font-semibold text-gray-900 mb-2">$ man bitmap-lab-internals</h3>
-              <p className="text-gray-700">
-                A deep dive into pixel buffers, color channels and memory layout.
+                ▸ keep the linux/terminal feel but explain every step in plain text.
               </p>
             </div>
           </div>
@@ -190,7 +216,7 @@ docs/
           Back to Documentation Hub
         </Link>
         <span className="text-xs text-gray-500 font-mono">
-          $ man bitmap-lab   # documentation before clever abstractions
+          $ bitmap-lab   # documentation before clever abstractions
         </span>
       </footer>
     </>

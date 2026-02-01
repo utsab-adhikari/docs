@@ -15,7 +15,7 @@ export default function HomePage() {
           Technical Documentation
         </h1>
         <p className="text-gray-700 leading-relaxed mb-6">
-          This site contains comprehensive documentation for all completed projects.  
+          This site contains comprehensive documentation for all projects.  
           Each project is documented with system architecture, technical implementation 
           details, and deployment procedures.
         </p>
@@ -160,7 +160,7 @@ export default function HomePage() {
             </div>
             
             <p className="text-gray-700 text-sm mb-3 leading-relaxed">
-              Personal portfolio website showcasing completed projects, technical skills, 
+              Personal portfolio website showcasing projects, technical skills, 
               and professional experience. Built with modern web technologies and design 
               principles for optimal user experience.
             </p>
@@ -186,7 +186,7 @@ export default function HomePage() {
         </h2>
         <div className="text-sm text-gray-700 space-y-3 leading-relaxed">
           <p>
-            This documentation hub serves as a comprehensive reference for all completed 
+            This documentation hub serves as a comprehensive reference for all 
             projects. Each project includes detailed technical documentation covering 
             system architecture, implementation decisions, and deployment procedures. 
           </p>
